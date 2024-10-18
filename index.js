@@ -1,6 +1,6 @@
 
 //exchange rate fetcher with city mapper
-async function fetchUSDRates() {
+/*async function fetchUSDRates() {
     try {
         const response = await fetch('http://api.exchangerate.host/live?access_key=2e6db9098796585b84e8bc29146194b1');
         const data = await response.json();
@@ -9,7 +9,16 @@ async function fetchUSDRates() {
 
             const rateEntries = Object.entries(rates);
 
-            const topRates = rateEntries.sort((a, b) => b[1] - a[1]).slice(0, 3);
+            const topRates = rateEntries.sort((a, b) => b[1] - a[1]).slice(0, 3);*/
+async function fetchExchangeRates() {
+    try {
+        const response = await fetch('http://api.exchangerate.host/live?access_key=2e6db9098796585b84e8bc29146194b1');
+        const data = await response.json();
+        return data.quotes; // Return the rates for further use
+    } catch (error) {
+        console.error('Error fetching exchange rates:', error);
+    }
+}
 
             //used AI to generate the cities to save time. Some of these seem wrong, but I'll go with it for now. I also now understand why databases are useful.
             const cityMap = {
@@ -176,7 +185,52 @@ async function fetchUSDRates() {
                 USDZWL: 'Harare',
             };
 
-            const currencyRatesDiv = document.getElementById('currency-rates');
+            async function displayTopRates() {
+                const rates = await fetchExchangeRates();
+                const rateEntries = Object.entries(rates);
+                const topRates = rateEntries.sort((a, b) => b[1] - a[1]).slice(0, 3);
+                
+                console.log(topRates)
+                
+                const currencyRatesDiv = document.getElementById('currency-rates');
+                currencyRatesDiv.innerHTML = '';
+                
+                topRates.forEach(([currency, rate]) => {
+                    const city = cityMap[currency] || 'Unknown City';
+                    const rateElement = document.createElement('p');
+                    rateElement.textContent = `${currency}: ${rate} (City: ${city})`;
+                    currencyRatesDiv.appendChild(rateElement);
+                });
+            }
+            
+            function searchExchangeRate(rates) {
+                const input = document.getElementById('currency-input').value.toUpperCase();
+                const currency = `USD${input}`;
+                const rate = rates[currency];
+                const resultDiv = document.getElementById('search-result');
+                resultDiv.innerHTML = ''; // Clear previous results
+            
+                if (rate) {
+                    const city = cityMap[currency] || 'Unknown City';
+                    const resultElement = document.createElement('p');
+                    resultElement.textContent = `${currency}: ${rate} (City: ${city})`;
+                    resultDiv.appendChild(resultElement);
+                } else {
+                    resultDiv.textContent = 'Currency not found. Please try again.';
+                }
+            }
+            
+            document.getElementById('search-button').addEventListener('click', async () => {
+                const rates = await fetchExchangeRates();
+                searchExchangeRate(rates);
+            });
+            
+            // Call the function to display top rates on page load
+            displayTopRates();
+
+
+
+            /*const currencyRatesDiv = document.getElementById('currency-rates');
             currencyRatesDiv.innerHTML = ''; // Clear previous content
     
             topRates.forEach(([currency, rate]) => {
@@ -189,5 +243,5 @@ async function fetchUSDRates() {
         console.error('Error fetching exchange rates:', error);
     }
 }
-fetchUSDRates();
+fetchUSDRates();*/
 

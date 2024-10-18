@@ -47,25 +47,23 @@ body {
     color: black
   }
   /* Styling for the input box */
-  #input-box {
+  #search-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#currency-input {
+    padding: 10px;
     width: 200px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 5px;
-    font-size: 20px;
-  }
-  
-  /* Styling for the Add button */
-  #input-button {
-    font-size: 20px;
-    cursor: pointer;
-    transition: 0.4s;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #2e60ea;
-  }
+}
+
+#search-button {
+    padding: 10px 15px;
+}
+
+#search-result {
+    color:#000000
+}
   
   /* Change the background color of the Add button on hover */
   #input-button:hover {
