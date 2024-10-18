@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>28's Sandbox</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="index.js"></script>
-</head>
-<body>
-  <p>Hello SDI 28</p>
-</body>
-<footer>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO List</title>
+    <link rel="stylesheet" href="style.css">
+    <div id="image-container">
+        <img src="images/money.jpg" alt="Cash Money Image">
+    </div>
+  </head>
+  <body>
+    <!-- Create a container for the todo list -->
+    <div id="todo-container">
+      <!-- Todo list header -->
+      <div id="header">
+        <h1>BIGMONEY.org</h1>
+      </div>
 
-</footer>
+      <!-- Create input box and add button -->
+      <div id="search by currency">
+        <input type="text" id="input-box" placeholder="enter a currency" onkeyup="saveValue(this)">
+        <button id="input-button">search</button>
+      </div>
+
+      <h1>Top 3 Currency Exchange Rates</h1>
+      <div id="currency-rates"></div>
+
+      <footer style="text-align: center; margin-top: 20px;">
+        <p>Showing you where your USD goes the furtherst since 2024</p>
+    </footer>
+    <!-- Include JavaScript file -->
+    <script src="index.js" defer></script>
+  </body>
 </html>

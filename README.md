@@ -1,14 +1,18 @@
 # Project1
 Forex Static Website Project
 
-BIGMONEY.org
-Showing you where your USD goes the furtherst since 2024
+Welcome to BIGMONEY.org! "Showing you where your USD goes the furtherst since 2024"
 
-display the daily high UV index alongside each
+SUMMARY: This project aims to present the top ten best foreign exchange rates in USD alongside the daily UV index in a major location that uses said foreign currency. This data, sourced from the credited APIs, is then followed by a proprietary overall vibe rating.
 
-allows users to earch specific currencies
+INTENDED USER/USEAGE: Made for people who love getting BIG MONEY and sick tans. Use this site to plan a vacation and brainstorm investment ideas at the same time!
 
-provides star rating with specific weight to value/UV
+HOW TO USE: Simply view the index.html via a browser and recieve up to date data and ratings! Feel free to input any currency (ex. GBP, AUD, CHF) within the search bar to see the latest data/rating of your choosing.
 
+DISCLAIMER: City to currency matching could be entirely wrong, I just took an educated guess for each one.
 
-Link to Kanban: https://trello.com/b/faZIrwKW/project-1-kanban
+Utilized APIs:
+exchangerate.host
+openweathermap.org
+
+Link to my Project Kanban: https://trello.com/b/faZIrwKW/project-1-kanban

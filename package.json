@@ -1,0 +1,11 @@
+{
+  "name": "project1",
+  "version": "1.0.0",
+  "description": "Forex Static Website Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,97 @@
+body {
+    background-image: url(images/background.jpg);
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center;   /* Centers the image */
+    background-size: cover;
+    font-family: 'Impact MS', sans-serif;
+    text-align: center;
+    margin-top: 50px;
+  }
+  #image-container {
+    float: left; /* Aligns the container to the left */
+    width: 200px; /* Set a width for the image container */
+    margin-right: 20px; /* Space between images and main content */
+}
+
+#image-container img {
+    width: 100%; /* Make images responsive */
+    margin-bottom: 10px; /* Space between images */
+}
+  
+  /* Styling for the to-do list container */
+  #todo-container {
+    background-size: contain;
+    background-color: white;
+    width: 400px;
+    margin: 0 auto;
+    border: 2px solid #000000;
+    padding: 20px;
+    color: white;
+    border-radius: 15px;
+  }
+  
+  /* Styling for the header inside the container */
+  #header {
+    margin: 5px;
+    font-size: 20px;
+    text-align: center;
+    color: black
+  }
+
+  /* Styling for the H1 header */
+  h1 {
+    margin-bottom: 20px; 
+    color: black;
+  }
+  #currency-rates {
+    color: black
+  }
+  /* Styling for the input box */
+  #input-box {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 5px;
+    font-size: 20px;
+  }
+  
+  /* Styling for the Add button */
+  #input-button {
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.4s;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2e60ea;
+  }
+  
+  /* Change the background color of the Add button on hover */
+  #input-button:hover {
+    background-color: #9eb7fd; 
+  }
+  
+  /* Remove bullet points and style unordered list for tasks */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  /* Styling each task item in the list */
+  li {
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2em; /* Adjust font size */
+    color: gray; /* Change text color */
+}
