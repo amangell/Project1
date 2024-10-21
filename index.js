@@ -1,15 +1,4 @@
 
-//exchange rate fetcher with city mapper
-/*async function fetchUSDRates() {
-    try {
-        const response = await fetch('http://api.exchangerate.host/live?access_key=2e6db9098796585b84e8bc29146194b1');
-        const data = await response.json();
-
-            const rates = data.quotes;
-
-            const rateEntries = Object.entries(rates);
-
-            const topRates = rateEntries.sort((a, b) => b[1] - a[1]).slice(0, 3);*/
 async function fetchExchangeRates() {
     try {
         const response = await fetch('http://api.exchangerate.host/live?access_key=2e6db9098796585b84e8bc29146194b1');
@@ -208,7 +197,7 @@ async function fetchExchangeRates() {
                 const currency = `USD${input}`;
                 const rate = rates[currency];
                 const resultDiv = document.getElementById('search-result');
-                resultDiv.innerHTML = ''; // Clear previous results
+                resultDiv.innerHTML = '';
             
                 if (rate) {
                     const city = cityMap[currency] || 'Unknown City';
@@ -225,7 +214,6 @@ async function fetchExchangeRates() {
                 searchExchangeRate(rates);
             });
             
-            // Call the function to display top rates on page load
             displayTopRates();
 
 
