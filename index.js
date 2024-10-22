@@ -1,7 +1,7 @@
 
 async function fetchExchangeRates() {
     try {
-        const response = await fetch('http://api.exchangerate.host/live?access_key=2e6db9098796585b84e8bc29146194b1');
+        const response = await fetch('http://api.exchangerate.host/live?access_key=be67a359c86e5497b1ceff3f4824dd40');
         const data = await response.json();
         return data.quotes;
     } catch (error) {
