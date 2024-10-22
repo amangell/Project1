@@ -17,7 +17,7 @@ body {
     width: 100%; /* Make images responsive */
     margin-bottom: 10px; /* Space between images */
 }
-  
+
   /* Styling for the to-do list container */
   #todo-container {
     background-size: contain;
