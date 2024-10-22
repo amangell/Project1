@@ -218,18 +218,3 @@ async function fetchExchangeRates() {
 
 
 
-            /*const currencyRatesDiv = document.getElementById('currency-rates');
-            currencyRatesDiv.innerHTML = ''; // Clear previous content
-    
-            topRates.forEach(([currency, rate]) => {
-                const city = cityMap[currency] || 'Unknown City';
-                const rateElement = document.createElement('p');
-                rateElement.textContent = `${currency}: ${rate} (City: ${city})`;
-                currencyRatesDiv.appendChild(rateElement);
-            });
-    } catch (error) {
-        console.error('Error fetching exchange rates:', error);
-    }
-}
-fetchUSDRates();*/
-
