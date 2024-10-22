@@ -3,7 +3,7 @@ async function fetchExchangeRates() {
     try {
         const response = await fetch('http://api.exchangerate.host/live?access_key=2e6db9098796585b84e8bc29146194b1');
         const data = await response.json();
-        return data.quotes; // Return the rates for further use
+        return data.quotes;
     } catch (error) {
         console.error('Error fetching exchange rates:', error);
     }
@@ -186,7 +186,7 @@ async function fetchExchangeRates() {
                 
                 topRates.forEach(([currency, rate]) => {
                     const cityInfo = cityMap[currency];
-                    const city = cityInfo ? cityInfo.name : 'Unknown City'; // Access the city name
+                    const city = cityInfo ? cityInfo.name : 'Unknown City';
                     const rateElement = document.createElement('p');
                     rateElement.textContent = `${currency}: ${rate} (City: ${city})`;
                     currencyRatesDiv.appendChild(rateElement);
@@ -197,7 +197,6 @@ async function fetchExchangeRates() {
             async function fetchUVIndex(lat, lon) {
                 const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=uv_index`);
                 const data = await response.json();
-                // Assuming you want the maximum UV index from the hourly data
                 const maxUV = Math.max(...data.hourly.uv_index);
                 return maxUV;
             }
@@ -209,7 +208,7 @@ async function fetchExchangeRates() {
                 if (rate > 2 && uv >= 7 && uv < 8) return '3/5 - Mid';
                 if (rate > 10 && uv >= 8) return '4/5 - Aight';
                 if (rate > 20 && uv >= 8) return '5/5 - LETS GO!!';
-                return 'N/A'; // In case none of the conditions are met
+                return 'N/A';
             }
             
             async function searchExchangeRate(rates) {
@@ -221,11 +220,11 @@ async function fetchExchangeRates() {
             
                 if (rate) {
                     const cityInfo = cityMap[currency];
-                    const city = cityInfo ? cityInfo.name : 'Unknown City';
+                    const city = cityInfo ? cityInfo.name : 'Mystery City';
                     const lat = cityInfo ? cityInfo.lat : null;
                     const lon = cityInfo ? cityInfo.lon : null;
             
-                    let uv = 'N/A'; // Default value if lat/lon are not available
+                    let uv = 'N/A';
                     if (lat && lon) {
                         uv = await fetchUVIndex(lat, lon);
                     }
@@ -236,7 +235,7 @@ async function fetchExchangeRates() {
                     resultElement.textContent = `${currency}: ${rate} (City: ${city} (UV: ${uv}) | Rating: ${rating})`;
                     resultDiv.appendChild(resultElement);
                 } else {
-                    resultDiv.textContent = 'Currency not found. Please try again.';
+                    resultDiv.textContent = 'Currency not found';
                 }
             }
             
@@ -248,8 +247,8 @@ async function fetchExchangeRates() {
 
             document.getElementById('money-image').addEventListener('click', function() {
                 const audio = document.getElementById('audio');
-                audio.currentTime = 0; // Reset the audio to the beginning
-                audio.play(); // Play the audio
+                audio.currentTime = 0;
+                audio.play(); 
             });
 
 

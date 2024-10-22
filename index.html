@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TO-DO List</title>
     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
     <div id="image-container">
-        <img src="images/money.jpg" alt="Cash Money Image">
+        <img src="images/money.jpg" alt="Cash Money Image" id="money-image">
     </div>
     <audio id="audio" src="audio/Trance - 009 Sound System Dreamscape (HD).mp3"></audio>
-  </head>
-  <body>
-
     <div id="todo-container">
-
-      <div id="header">
-        <h1>BIGMONEY.org</h1>
-      </div> 
-
-      <div id="search-container">
-        <input type="text" id="currency-input" placeholder="Enter currency (e.g., EUR)">
-        <button id="search-button">Search</button>
+        <div id="header">
+            <h1>BIGMONEY.org</h1>
+        </div> 
+        <div id="search-container">
+            <input type="text" id="currency-input" placeholder="Enter currency (e.g., EUR)">
+            <button id="search-button">Search</button>
+        </div>
+        <div id="search-result"></div>
+        <h1>Top 3 Currency Exchange Rates</h1>
+        <div id="currency-rates"></div>
+        <footer style="text-align: center; margin-top: 20px;">
+            <p>Showing you where your USD goes the furthest since 2024</p>
+        </footer>
     </div>
-    <div id="search-result"></div>
 
-      <h1>Top 3 Currency Exchange Rates</h1>
-      <div id="currency-rates"></div>
-
-      <footer style="text-align: center; margin-top: 20px;">
-        <p>Showing you where your USD goes the furtherst since 2024</p>
-    </footer>
     <script src="index.js" defer></script>
-  </body>
+</body>
 </html>
